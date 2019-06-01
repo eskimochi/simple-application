@@ -1,11 +1,11 @@
 # Welcome to my Learning Repo
 
-##A spring-boot maven project was generated through:
+## A spring-boot maven project was generated through:
 > https://start.spring.io/
 
 Additional dependencies were added for future lessons (potentially).
 
-##Follow the instructions below to get started:
+## Follow the instructions below to get started:
 
 Install Java 8:
 >https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
