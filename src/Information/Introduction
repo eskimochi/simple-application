@@ -23,10 +23,9 @@ With that said, please feel free to give me feedback on this!
                                                 WHERE SHOULD I BEGIN?
 ########################################################################################################################
 
-If you are familiar with certain topics feel free to skip the "Information.txt" files. The order of these topics will be added as I add on to
-this repository; this will be the order I will try to maintain in teaching this. Please Note that the repository will
-NOT have any implemented code. I will only be pushing instructions to each package and pick up from where I left off in
-the order listed below.
+If you are familiar with certain topics feel free to skip the "Information.txt" files. The order will follow the video
+tutorials that I will be creating to handle different topics from "start" to "finish". Some topics may not really have
+a concrete "start" and "finish", but instead will be used throughout the lifetime of this project.
 
 // Version Control System (Should be familiar with)
 
