@@ -1,0 +1,49 @@
+########################################################################################################################
+                                                    WHAT IS MAVEN?
+########################################################################################################################
+
+Maven is a software project management and comprehension tool. It will describe how an application is built and what
+libraries the application is dependent on (defines dependencies).
+
+########################################################################################################################
+                                HOW DOES MAVEN DESCRIBE HOW AN APPLICATION IS BUILT?
+########################################################################################################################
+
+Maven "describes" how an application is built through its basic (default) lifecycle defined in:
+    https://maven.apache.org/ref/3.5.0/maven-core/lifecycles.html
+
+Which ones should you be concerned with?
+    As a developer: Focus on the "default" lifecycle. The ones I am familiar with are (The others I manually manage):
+        -validate:      You (the developer) will add plugins which will "validate" whatever it is you want to validate
+                        when calling this step. For example, you may want to maintain a coding style standard and may want
+                        to verify that this standard is met on each build.
+        -compile:       This will compile all of the java files to class files
+        -test-compile:  Compile the test source code
+        -test:          Run unit-tests
+        -package:       Package the compiled classes and resources into a JAR file
+    As a automation / devops: Focus on "default" lifecycle but also be aware of clean and site lifecycles.
+
+########################################################################################################################
+                                                  WHAT IS THE POM.XML?
+########################################################################################################################
+
+The Project Object Model file is "the fundamental unit of work in Maven". This is an XML file which defines project and
+configuration details. Maven will look at this file to build your project.
+
+Project details and versioning will be used to name your jar file accordingly.
+We can pass configuration instructions - One of which includes packaging the project into a WAR file for Web Apps.
+Plugins can be added to add "layers" into your project through different steps of the life cycle. These layers will
+manage different things accordingly.
+Finally, dependencies define what "external libraries" your project will be using. When building your project, maven will
+download these libraries (from the listed dependencies) from the Maven Repository:
+    https://mvnrepository.com/
+
+########################################################################################################################
+                            I FINISHED COMPILING, TESTING, AND BUILDING MY JAR, WHAT NOW?
+########################################################################################################################
+
+Once you have your jar, you can run your application (either through your IDE or command prompt):
+If your JAVA_HOME environmental variable is already set to the java bin directory:
+    Open up command prompt: Run > cmd.exe
+    Change directory to the jar location: `cd path/to/jar/file`
+    Run the jar file: `java -jar <jar-file-name>.jar`
