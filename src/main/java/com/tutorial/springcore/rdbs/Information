@@ -1,0 +1,27 @@
+########################################################################################################################
+                                                    WHAT IS A RDBS?
+########################################################################################################################
+
+"RDBS" stands for "Relational Database System" -- They are storage systems which recognize relations among stored items.
+What RDBS guarantees (compared to other popular Storage Systems) is A.C.I.D. properties.
+
+########################################################################################################################
+                                                     WHAT IS A.C.I.D.?
+########################################################################################################################
+
+Atomicity:      The guarantee that a single transaction (which can be made up of many operations) will SUCCEED as a whole or
+                FAIL as a whole.
+Concurrency:    The guarantee that the data in the storage system follow the constraints/rules that was defined in the
+                schema -- Basically no data can be messed up inside of teh database.
+Isolation:      The guarantee that even in a multi-concurrent environment with many transactions occurring simultaneously,
+                each transaction will be completed AS IF it were sequentially done.
+Durability:     The guarantee that in the event a power outage occurs, the data is not lost.
+
+########################################################################################################################
+                                                WHICH ONE SHOULD I USE?
+########################################################################################################################
+
+I can't really answer this question -- It depends on the application and what you want to do with the data you will be
+storing in the storage system. Need to do the research! Questions to consider are:
+1. NOSQL db vs RDBS?
+2. Which specific DB system should I use?

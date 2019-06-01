@@ -1,0 +1,116 @@
+########################################################################################################################
+                                                      WHAT IS GIT?
+########################################################################################################################
+
+Googling `git` returns:
+"A version-control system for tracking changes in source code during software development. It is designed for
+coordinating work among programmers, but it can be used to track changes in any set of files"
+
+tldr: Tracks file history and makes life easier for projects where multiple people are working on the same project.
+
+########################################################################################################################
+                                                WHAT DO I NEED TO KNOW?
+########################################################################################################################
+
+If you are reading this, you have already "forked" this repository to your repository and have cloned it to your local
+system. Those commands aren't as frequently used in a developer's day-to-day activities (generally only on introduction
+to a repository / set-up). The basic commands you SHOULD be familiar with are below (feel free to reference them  as
+you work through the tasks in this repository) -- As you use this more often, it will become second nature:
+
+Note From Owner: I use the GUI, but I will be writing this in terms of terminal commands as it's better to understand
+what commands do what and why you would use it.
+
+########################################################################################################################
+                                                        SET-UP
+########################################################################################################################
+
+1. Open up git bash terminal.
+2. Change directory to root of your project (or the directory where the .git file is located):
+```
+cd path/to/your/project/directory
+```
+
+Enter the commands based off what you need:
+
+FETCH:
+    This is to grab all of the changes from the remote repository. So consider the following scenario:
+    Mary and Jane were working on a project together. The project's remote repository (origin/master) contained 3 files.
+    Both Mary and Jane set-up their projects at the same time (they both had 3 files). Mary decided to add a file to the
+    repository and pushed it to the remote repository (Now the repository contains 4 files). Jane does not see 3 files
+    and if she tried to do a GIT PULL (Scroll down to PULL for more information on what this is), she was unable to
+    get this 4th file that Mary added. What Jane needs to do is first FETCH to update the changes that occurred in
+    the remote repository to the list of changes that she obtained from her last FETCH. Only after she did a FETCH can
+    Jane do a PULL and see the 4th file in her system.
+```
+git fetch --all
+```
+
+MERGE:
+    This is to add the changes from one branch to another branch. So consider the following scenario:
+    Image:
+    ------------------------------------  Master Branch
+
+    A developer had to work on a ticket: JIRA-1274. He did a GIT CHECKOUT (Scroll down to CHECKOUT for more information on
+    what this is) on master branch, creating a local copy of MASTER. The developer made his changes and pushed it to a
+    separate remote branch called: JIRA-1274. Note: I used the 'a' letter to represent the changes from the developer.
+    Image:
+    ------------------------------------  Master Branch
+                                        \
+                                         \aaaaaaaaaaaaaaa  JIRA-1274
+
+    Time goes by and the master branch had new features and stuff added:
+    Image:
+    -----------------------------------------------------------------  Master Branch
+                                        \
+                                         \aaaaaaaaaaaaaaa  JIRA-1274
+    Now we need to merge the fix into master branch, so the developer will have to first FETCH the latest differences
+    from the remote repository and then merge the master branch into his branch. Note it just appended it.
+    Image:
+    -----------------------------------------------------------------  Master Branch
+                                            \
+                                             \-------------------------aaaaaaaaaaaaaaa  JIRA-1274
+    Luckily the developer never came into merge conflicts :)
+```
+git merge <commit>
+```
+
+PULL:
+    This is basically doing a FETCH followed by a MERGE (specifying FETCH_HEAD).
+```
+git pull <remote-branch>
+```
+
+CHECKOUT:
+    This is obtaining the local copy of a remote repository.
+```
+git -b checkout <branch>
+```
+
+ADD:
+    To add a file to be version controlled by GIT. This is part of "staging"
+```
+git add <file>
+```
+
+RESET:
+    To undo GIT ADD. This is part of "staging"
+```
+git reset <file>
+```
+
+COMMIT:
+    Once a file is version controlled by git (see ADD above), git will compare the files in the referenced parent branch
+    and look for differences (either by line or by entire file) compared to your local working station. If a difference
+    exists, you have the option to "commit" these changes -- pretty much saying "I will be making these changes to the
+    remote branch". Note: a commit is not seen on the remote repository until a GIT PUSH occurs (See below for more
+    information on PUSH)
+```
+{... git add or git remove has taken place -- aka "staging" is done}
+git commit -m <message>
+```
+
+PUSH:
+    Pretty much hitting the "confirm" button and pushing any committed changes you made.
+```
+git push <remote-branch-name>
+```
