@@ -14,6 +14,9 @@ Follow the instructions below to get started:
 Install Java 8:
     https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
+Install Tomcat 8:
+    https://tomcat.apache.org/download-80.cgi
+
 Install git:
     Git installation: https://git-scm.com/downloads
 
